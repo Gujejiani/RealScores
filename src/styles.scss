@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+@mixin flexPos {
+  justify-content: center;
+  align-items: center;
+}
+$darker-color: #2f2f2f;
+$light-color: #d6e0d5;
+$sun-color: #8f6c0b;
+$moon-color: #089aad;

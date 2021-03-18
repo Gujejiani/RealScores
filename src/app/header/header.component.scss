@@ -1,11 +1,9 @@
-@import "../styles/abstracts/variable";
-
 .header {
-  background-color: $darker-color;
+  background-color: #2f2f2f;
   padding: 20px 0;
 }
 .wrapper {
   max-width: 1200px;
   margin: auto;
-  color: $light-color;
+  color: #d6e0d5;
 }
