@@ -1,0 +1,24 @@
+<div (click)="toggleDropDown($event)" class="language">
+  <img class="language__img language--main" [src]="language.src" alt="eng" />
+  <label class="language__title language__title--main">{{
+    language.country
+  }}</label>
+  <i class="fas fa-caret-down"></i>
+  <ul
+    class="language__dropdown"
+    [ngClass]="{
+      'language__dropdown--show': showDropDown
+    }"
+  >
+    <li
+      *ngFor="let language of languages"
+      class="language__dropdown__item"
+      (click)="languageClicked(language)"
+    >
+      <img class="language__img" [src]="language.src" alt="eng" />
+      <label class="language__title language__title--eng">
+        {{ language.country }}
+      </label>
+    </li>
+  </ul>
+</div>

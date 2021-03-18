@@ -1,0 +1,42 @@
+<app-overlay
+  [show]="showLogin"
+  (onOverlayClick)="hideLoginOverlay()"
+></app-overlay>
+<div class="wrapper" [ngClass]="{ 'wrapper--show': showLogin }">
+  <form class="login">
+    <h3 class="login__title">{{ type }}</h3>
+
+    <div class="login__social">
+      <div class="login__social__fb">
+        <i class="fab fa-facebook-square fa-lg"></i>
+        <label class="login__social__title">FACEBOOK</label>
+      </div>
+      <div class="login__social__google">
+        <i class="fab fa-google fa-lg"></i
+        ><label class="login__social__title">GOOGLE</label>
+      </div>
+    </div>
+
+    <div class="login__inputs">
+      <input type="email" placeholder="Email" class="login__inputs__input" />
+      <input
+        type="password"
+        placeholder="Password"
+        class="login__inputs__input"
+      />
+    </div>
+    <button type="submit" class="login__submit">{{ type }}</button>
+
+    <div class="login__alternative">
+      <label class="login__alternative__sign"
+        >or
+        <span class="login__alternative--sign-up">{{
+          oppositeType
+        }}</span></label
+      >
+      <label *ngIf="type === 'Login'" class="login__alternative--forgot"
+        >Forgot Your Password ?</label
+      >
+    </div>
+  </form>
+</div>

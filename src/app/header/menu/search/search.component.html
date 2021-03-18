@@ -1,0 +1,77 @@
+<div class="search">
+  <app-overlay
+    [show]="showOverlay"
+    (onOverlayClick)="closeModal()"
+  ></app-overlay>
+  <i (click)="searchClicked()" class="fas fa-search fa-lg"></i>
+  <div #searchModal class="search__modal">
+    <h3 class="search__modal__title">Search...</h3>
+    <input type="text" class="search__modal__input" placeholder="search..." />
+    <label class="search__modal__subtitle">Your last Searches</label>
+    <ul class="search__modal__searches">
+      <li class="search__modal__searches__item">
+        <img
+          class="search__modal__searches__item__img"
+          src="../../../assets/premierLeague.png"
+          alt="league"
+        />
+        <label class="search__modal__searches__item__title"
+          >England: Premier league</label
+        >
+      </li>
+    </ul>
+    <label class="search__modal__subtitle">Popular Searches</label>
+    <ul class="search__modal__searches search__modal__searches__popular">
+      <li class="search__modal__searches__item">
+        <img
+          class="search__modal__searches__item__img"
+          src="../../../assets/premierLeague.png"
+          alt=""
+        />
+        <label class="search__modal__searches__item__title"
+          >England: Premier league</label
+        >
+      </li>
+      <li class="search__modal__searches__item">
+        <img
+          class="search__modal__searches__item__img"
+          src="../../../assets/premierLeague.png"
+          alt="league"
+        />
+        <label class="search__modal__searches__item__title"
+          >England: Premier league</label
+        >
+      </li>
+      <li class="search__modal__searches__item">
+        <img
+          class="search__modal__searches__item__img"
+          src="../../../assets/premierLeague.png"
+          alt="league"
+        />
+        <label class="search__modal__searches__item__title"
+          >England: Premier league</label
+        >
+      </li>
+      <li class="search__modal__searches__item">
+        <img
+          class="search__modal__searches__item__img"
+          src="../../../assets/premierLeague.png"
+          alt="league"
+        />
+        <label class="search__modal__searches__item__title"
+          >England: Premier league</label
+        >
+      </li>
+      <li class="search__modal__searches__item">
+        <img
+          class="search__modal__searches__item__img"
+          src="../../../assets/premierLeague.png"
+          alt="league"
+        />
+        <label class="search__modal__searches__item__title"
+          >England: Premier league</label
+        >
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="menu">
+  <img src="../../assets/Logo.svg" alt="logo" class="menu__logo" />
+
+  <div class="menu__section">
+    <app-languages></app-languages>
+    <div class="menu__section__theme" (click)="themeChanged()">
+      <i
+        class="fas fa-sun fa-lg"
+        [ngStyle]="{ color: !darkTheme ? 'yellow' : '#8f6c0b' }"
+      ></i>
+      <span
+        class="menu__section__theme__background"
+        [ngClass]="{
+          'menu__section__theme__background--active': darkTheme
+        }"
+        #themeBackground
+      ></span>
+      <i
+        class="fas fa-moon fa-lg"
+        [ngStyle]="{ color: darkTheme ? '#089aad' : '#8f6c0b' }"
+      ></i>
+    </div>
+    <app-search></app-search>
+    <div class="menu__section__settings">
+      <i (click)="onSettingsClick()" class="fas fa-cog fa-lg"></i>
+      <app-settings [showSettingsOverlay]="showSettingOverlay"></app-settings>
+    </div>
+    <span (click)="loginClicked()" class="menu__section__login">LOGIN</span>
+
+    <span class="menu__section__registration" (click)="registrationClicked()"
+      >REGISTRATION</span
+    >
+    <app-form-template
+      [type]="type"
+      [oppositeType]="oppositeType"
+      [showLogin]="showFormModal"
+    ></app-form-template>
+  </div>
+</div>

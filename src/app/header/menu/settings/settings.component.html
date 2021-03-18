@@ -1,0 +1,32 @@
+<app-overlay
+  [show]="showSettingsOverlay"
+  (onOverlayClick)="closeModal()"
+></app-overlay>
+<div class="wrapper" [ngClass]="{ 'wrapper--show': showSettingsOverlay }">
+  <div class="settings-modal">
+    <h3 class="settings-modal__title">Settings</h3>
+    <div class="settings-modal__setting">
+      <label class="settings-modal__setting__title"
+        >Choose Time Zone <i class="far fa-clock"></i
+      ></label>
+      <label class="settings-modal__setting__set"
+        >17.03. 10:28, GMT-7 <i class="fas fa-edit"></i
+      ></label>
+    </div>
+    <div class="settings-modal__setting">
+      <label class="settings-modal__setting__title"
+        >Order Matches by: <i class="far fa-clock"></i
+      ></label>
+      <div class="settings-modal__setting__radio">
+        <div>
+          <input type="radio" id="name" name="setting" value="name" />
+          <label for="name">League name</label>
+        </div>
+        <div>
+          <input type="radio" id="time" name="setting" value="time" />
+          <label for="time">Match start time</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
