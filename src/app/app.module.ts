@@ -12,6 +12,7 @@ import { OverlayComponent } from './UI/overlay/overlay.component';
 
 import { FormTemplateComponent } from './header/menu/form-template/form-template.component';
 import { LanguageComponent } from './header/menu/language-dropdown/languages.component';
+import { NavComponent } from './header/nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { LanguageComponent } from './header/menu/language-dropdown/languages.com
     OverlayComponent,
     FormTemplateComponent,
     LanguageComponent,
+    NavComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],

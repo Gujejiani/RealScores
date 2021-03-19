@@ -11,15 +11,15 @@ export class LanguageComponent implements OnInit {
 
   language: { country: string; src: string } = {
     country: 'English/International',
-    src: '../../assets/eng.png',
+    src: './assets/eng.png',
   };
-  src: string = '../../assets/eng.png';
+  src: string = './assets/eng.png';
   languages = [
-    { country: 'English/International', src: '../../assets/eng.png' },
-    { country: 'German', src: '../../assets/German.png' },
-    { country: 'Spain', src: '../../assets/spain.png' },
-    { country: 'Russian', src: '../../assets/russian.jpg' },
-    { country: 'France', src: '../../assets/france.png' },
+    { country: 'English/International', src: './assets/eng.png' },
+    { country: 'German', src: './assets/German.png' },
+    { country: 'Spain', src: './assets/spain.png' },
+    { country: 'Russian', src: './assets/russian.jpg' },
+    { country: 'France', src: './assets/france.png' },
   ];
   ngOnInit(): void {}
   languageClicked(language: { country: string; src: string }) {

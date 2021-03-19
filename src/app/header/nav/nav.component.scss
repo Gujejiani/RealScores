@@ -1,0 +1,21 @@
+.nav {
+  &__list {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    justify-content: space-between;
+    &__item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 120px;
+      justify-content: space-around;
+
+      &__link {
+        a {
+          color: gray;
+        }
+      }
+    }
+  }
+}
