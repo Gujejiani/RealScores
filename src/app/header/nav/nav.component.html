@@ -1,34 +1,68 @@
 <nav class="nav">
   <ul class="nav__list">
-    <div class="nav__list__item">
+    <a
+      routerLink="/"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="nav__list__item--active"
+      class="nav__list__item"
+    >
       <i class="far fa-futbol"></i>
-      <li class="nav__list__item__link"><a href="#">SOCCER</a></li>
+      <li class="nav__list__item__link">SOCCER</li>
       <span class="nav__list__item__quantity">0</span>
-    </div>
-    <div class="nav__list__item">
+    </a>
+    <a
+      routerLink="tennis"
+      routerLinkActive="nav__list__item--active"
+      class="nav__list__item"
+    >
       <i class="fas fa-baseball-ball"></i>
-      <li class="nav__list__item__link"><a href="#">TENNIS</a></li>
-      <span class="nav__list__item__quantity">0</span>
-    </div>
-    <div class="nav__list__item">
+      <li class="nav__list__item__link">TENNIS</li>
+      <span class="nav__list__item__quantity">20</span>
+    </a>
+    <a
+      routerLink="basketball"
+      routerLinkActive="nav__list__item--active"
+      class="nav__list__item"
+    >
       <i class="fas fa-basketball-ball"></i>
-      <li class="nav__list__item__link"><a href="#">BASKETBALL</a></li>
+      <li class="nav__list__item__link">BASKETBALL</li>
       <span class="nav__list__item__quantity">0</span>
-    </div>
-    <div class="nav__list__item">
+    </a>
+    <a
+      routerLink="hockey"
+      routerLinkActive="nav__list__item--active"
+      class="nav__list__item"
+    >
       <i class="fas fa-hockey-puck"></i>
-      <li class="nav__list__item__link"><a href="#">HOCKEY</a></li>
+      <li class="nav__list__item__link">HOCKEY</li>
       <span class="nav__list__item__quantity">0</span>
-    </div>
-    <div class="nav__list__item">
+    </a>
+    <a
+      routerLink="handball"
+      routerLinkActive="nav__list__item--active"
+      class="nav__list__item"
+    >
       <i class="fas fa-futbol"></i>
-      <li class="nav__list__item__link"><a href="#">HANDBALL</a></li>
+      <li class="nav__list__item__link">HANDBALL</li>
       <span class="nav__list__item__quantity">0</span>
-    </div>
-    <div class="nav__list__item">
+    </a>
+    <a
+      routerLink="volleyball"
+      routerLinkActive="nav__list__item--active"
+      class="nav__list__item"
+    >
       <i class="fas fa-volleyball-ball"></i>
-      <li class="nav__list__item__link"><a href="#">VOLLEYBALL</a></li>
+      <li class="nav__list__item__link">VOLLEYBALL</li>
       <span class="nav__list__item__quantity">0</span>
-    </div>
+    </a>
+    <a
+      (click)="toggleNavDRopDown()"
+      class="nav__list__item nav__list__item__dropdown"
+      [ngClass]="{ 'nav__list__item__dropdown--show': showNavDropdown }"
+    >
+      <i class="fas fa-caret-down"></i>
+      <li class="nav__list__item__link">More Sports</li>
+    </a>
+    <app-nav-dropdown [showDropdown]="showNavDropdown"></app-nav-dropdown>
   </ul>
 </nav>

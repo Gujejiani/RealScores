@@ -13,6 +13,8 @@ import { OverlayComponent } from './UI/overlay/overlay.component';
 import { FormTemplateComponent } from './header/menu/form-template/form-template.component';
 import { LanguageComponent } from './header/menu/language-dropdown/languages.component';
 import { NavComponent } from './header/nav/nav.component';
+import { MainComponent } from './main/main.component';
+import { NavDropdownComponent } from './header/nav/nav-dropdown/nav-dropdown.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,8 @@ import { NavComponent } from './header/nav/nav.component';
     FormTemplateComponent,
     LanguageComponent,
     NavComponent,
+    MainComponent,
+    NavDropdownComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],

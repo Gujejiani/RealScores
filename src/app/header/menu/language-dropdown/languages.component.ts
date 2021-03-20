@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-languages',
@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./languages.component.scss'],
 })
 export class LanguageComponent implements OnInit {
-  @Input() showDropDown: boolean = false;
+  showDropDown: boolean = false;
   constructor() {}
 
   language: { country: string; src: string } = {
@@ -25,14 +25,9 @@ export class LanguageComponent implements OnInit {
   languageClicked(language: { country: string; src: string }) {
     this.language.country = language.country;
     this.language.src = language.src;
-    this.toggleDropDown(null);
   }
 
   toggleDropDown(e) {
-    if (!e) {
-      this.showDropDown = !this.showDropDown;
-      return;
-    }
     const el: Element = e.target;
     if (
       !(
