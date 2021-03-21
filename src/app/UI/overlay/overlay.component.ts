@@ -1,12 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  ViewChild,
-  ElementRef,
-  Input,
-} from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-overlay',
@@ -14,14 +6,13 @@ import {
   styleUrls: ['./overlay.component.scss'],
 })
 export class OverlayComponent implements OnInit {
+  @Input() show;
   @Output() onOverlayClick = new EventEmitter<void>();
-  @ViewChild('overlay') overlay: ElementRef;
   constructor() {}
-  @Input() show = false;
+
   ngOnInit(): void {}
-  overlayClicked() {
-    this.overlay.nativeElement.classList.toggle('overlay--show');
-    console.log(this.overlay.nativeElement);
+  overlayClick() {
     this.onOverlayClick.emit();
+    console.log('clicked');
   }
 }

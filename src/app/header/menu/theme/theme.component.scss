@@ -1,0 +1,36 @@
+.theme {
+  background-color: gray;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  .fas {
+    transition: color 0.3s ease-in-out;
+  }
+  &--active {
+    border-radius: 10px;
+  }
+  &__background {
+    position: absolute;
+    display: flex;
+    top: 0;
+    background-color: #000;
+    width: 10px;
+    height: 100%;
+    width: 32px;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+    &--active {
+      transform: translateX(32px);
+      .fas {
+        background-color: red;
+      }
+    }
+  }
+  .fas {
+    position: relative;
+    padding: 5px;
+    z-index: 10;
+    color: rgb(224, 166, 5);
+  }
+}

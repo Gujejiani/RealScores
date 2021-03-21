@@ -22,7 +22,7 @@
     <a
       routerLink="basketball"
       routerLinkActive="nav__list__item--active"
-      class="nav__list__item"
+      class="nav__list__item nav__list__item--basketball"
     >
       <i class="fas fa-basketball-ball"></i>
       <li class="nav__list__item__link">BASKETBALL</li>
@@ -31,7 +31,7 @@
     <a
       routerLink="hockey"
       routerLinkActive="nav__list__item--active"
-      class="nav__list__item"
+      class="nav__list__item nav__list__item--hockey"
     >
       <i class="fas fa-hockey-puck"></i>
       <li class="nav__list__item__link">HOCKEY</li>
@@ -40,7 +40,7 @@
     <a
       routerLink="handball"
       routerLinkActive="nav__list__item--active"
-      class="nav__list__item"
+      class="nav__list__item nav__list__item--handball"
     >
       <i class="fas fa-futbol"></i>
       <li class="nav__list__item__link">HANDBALL</li>
@@ -49,7 +49,7 @@
     <a
       routerLink="volleyball"
       routerLinkActive="nav__list__item--active"
-      class="nav__list__item"
+      class="nav__list__item nav__list__item--volleyball"
     >
       <i class="fas fa-volleyball-ball"></i>
       <li class="nav__list__item__link">VOLLEYBALL</li>
@@ -60,7 +60,10 @@
       class="nav__list__item nav__list__item__dropdown"
       [ngClass]="{ 'nav__list__item__dropdown--show': showNavDropdown }"
     >
-      <i class="fas fa-caret-down"></i>
+      <i
+        class="fas fa-caret-down"
+        [ngClass]="{ 'fa-caret-down--rotate': showNavDropdown }"
+      ></i>
       <li class="nav__list__item__link">More Sports</li>
     </a>
     <app-nav-dropdown [showDropdown]="showNavDropdown"></app-nav-dropdown>

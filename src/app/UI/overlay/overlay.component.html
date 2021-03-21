@@ -1,6 +1,5 @@
 <div
-  [ngClass]="{ 'overlay--show': show }"
-  (click)="overlayClicked()"
-  #overlay
   class="overlay"
+  (click)="overlayClick()"
+  [ngClass]="{ 'overlay--show': show }"
 ></div>

@@ -29,7 +29,24 @@
     &:hover {
       background-color: lighten($color: rgb(13, 26, 34), $amount: 10);
     }
-
+    &--volleyball {
+      display: none;
+      @media (max-width: 925px) {
+        display: flex;
+      }
+    }
+    &--handball {
+      display: none;
+      @media (max-width: 745px) {
+        display: flex;
+      }
+    }
+    &--basketball {
+      display: none;
+      @media (max-width: 745px) {
+        display: flex;
+      }
+    }
     &__link {
       margin-left: 5px;
       font-size: 12px;

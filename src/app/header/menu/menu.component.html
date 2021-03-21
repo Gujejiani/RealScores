@@ -3,22 +3,12 @@
 
   <div class="menu__section">
     <app-languages></app-languages>
-    <div class="menu__section__theme" (click)="themeChanged()">
-      <i
-        class="fas fa-sun fa-lg"
-        [ngStyle]="{ color: !darkTheme ? 'yellow' : '#8f6c0b' }"
-      ></i>
-      <span
-        class="menu__section__theme__background"
-        [ngClass]="{
-          'menu__section__theme__background--active': darkTheme
-        }"
-        #themeBackground
-      ></span>
-      <i
-        class="fas fa-moon fa-lg"
-        [ngStyle]="{ color: darkTheme ? '#089aad' : '#8f6c0b' }"
-      ></i>
+
+    <div class="mob-hide">
+      <app-theme
+        (themeChanged)="themeChanged()"
+        [darkTheme]="darkTheme"
+      ></app-theme>
     </div>
     <app-search></app-search>
     <div class="menu__section__settings">
@@ -30,10 +20,13 @@
     <span class="menu__section__registration" (click)="registrationClicked()"
       >REGISTRATION</span
     >
+    <app-burger-menu (onMenuClick)="menuClicked()"> </app-burger-menu>
+    <app-mob-menu [showMobMenu]="showMobileMenu"></app-mob-menu>
     <app-form-template
       [type]="type"
       [oppositeType]="oppositeType"
       [showLogin]="showFormModal"
+      (hideModal)="hideRegistrationModal()"
     ></app-form-template>
   </div>
 </div>

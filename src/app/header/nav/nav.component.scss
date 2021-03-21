@@ -9,10 +9,13 @@
       display: flex;
       align-items: center;
       width: 100%;
-
       color: rgb(216, 203, 203);
       cursor: pointer;
       padding: 15px 5px;
+      @media (max-width: 325px) {
+        font-size: 10px;
+      }
+
       &:hover {
         background-color: lighten($color: rgb(13, 26, 34), $amount: 10);
       }
@@ -24,6 +27,13 @@
         text-align: center;
         justify-content: space-around;
         position: relative;
+        .fa-caret-down {
+          transition: transform 0.5s ease-in-out;
+
+          &--rotate {
+            transform: rotate(180deg);
+          }
+        }
         &--show {
           background-color: lighten($color: rgb(13, 26, 34), $amount: 5);
         }
@@ -32,6 +42,9 @@
       &__link {
         margin-left: 5px;
         font-size: 14px;
+        @media (max-width: 330px) {
+          font-size: 12px;
+        }
       }
       &__quantity {
         padding: 5px 8px;
@@ -40,6 +53,26 @@
         color: #fff;
         font-size: 10px;
         border-radius: 100%;
+      }
+      &--handball {
+        @media (max-width: 745px) {
+          display: none;
+        }
+      }
+      &--basketball {
+        @media (max-width: 745px) {
+          display: none;
+        }
+      }
+      &--hockey {
+        @media (max-width: 450px) {
+          display: none;
+        }
+      }
+      &--volleyball {
+        @media (max-width: 925px) {
+          display: none;
+        }
       }
     }
   }

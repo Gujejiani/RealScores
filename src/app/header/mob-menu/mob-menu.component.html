@@ -1,0 +1,98 @@
+<div class="wrapper" [ngClass]="{ 'wrapper--show': showMobMenu }">
+  <div class="menu">
+    <ul class="menu__set">
+      <app-settings
+        (hideModal)="hideSettings()"
+        [showSettingsOverlay]="showSettingOverlay"
+      ></app-settings>
+      <li (click)="settingsClicked()" class="menu__set__item">
+        <i class="fas fa-cog fa-sm"></i>
+        <label class="menu__set__item__title">Settings</label>
+      </li>
+      <li (click)="toggleLanguages()" class="menu__set__item">
+        <img width="20px" [src]="language.src" class="fas fa-cog fa-lg" />
+        <label class="menu__set__item__title">{{ language.country }}</label>
+        <i
+          class="fas fa-caret-down"
+          [ngClass]="{ 'fa-caret-down--rotate': toggleLanguages }"
+        ></i>
+      </li>
+      <ul
+        [ngClass]="{ 'menu__set__item__languages--toggle': showLanguages }"
+        class="menu__set__item__languages"
+      >
+        <li
+          *ngFor="let language of languages"
+          style="padding: 10px 5px"
+          class="menu__set__item menu__set__item--languages"
+          (click)="languageSelected(language)"
+        >
+          <img width="15px" [src]="language.src" class="fas fa-cog fa-lg" />
+          <label class="menu__set__item__title">{{ language.country }}</label>
+        </li>
+      </ul>
+      <li
+        (click)="changeTheme()"
+        class="menu__set__item menu__set__item--theme"
+      >
+        <label>Choose Theme</label>
+        <app-theme [darkTheme]="darkThemeBackground"></app-theme>
+      </li>
+    </ul>
+    <ul class="menu__leagues">
+      <div class="menu__leagues__title">
+        <i class="fas fa-star fa-sm"></i>
+        <span>MY LEAGUES</span>
+      </div>
+
+      <li class="menu__leagues__league">
+        <div>
+          <img width="20px" src="./assets/eng.png" alt="" />
+          <span>Premier League</span>
+        </div>
+        <i class="fas fa-star"></i>
+      </li>
+      <li class="menu__leagues__league">
+        <div>
+          <img width="20px" src="./assets/eng.png" alt="" />
+          <span>Premier League</span>
+        </div>
+        <i class="fas fa-star"></i>
+      </li>
+    </ul>
+    <ul class="menu__leagues menu__leagues__teams">
+      <div class="menu__leagues__title">
+        <i class="fas fa-star fa-sm"></i>
+        <span>MY TEAMS</span>
+      </div>
+
+      <li class="menu__leagues__league">
+        <div>
+          <img width="20px" src="./assets/eng.png" alt="" />
+          <span>Premier League</span>
+        </div>
+        <i class="fas fa-star"></i>
+      </li>
+      <li class="menu__leagues__league">
+        <div>
+          <img width="20px" src="./assets/eng.png" alt="" />
+          <span>Premier League</span>
+        </div>
+        <i class="fas fa-star"></i>
+      </li>
+    </ul>
+    <ul class="menu__leagues menu__leagues__teams">
+      <div class="menu__leagues__title">
+        <i class="fas fa-star fa-sm"></i>
+        <span>COUNTRIES</span>
+      </div>
+
+      <li class="menu__leagues__league">
+        <span>Georgia</span>
+      </li>
+      <li class="menu__leagues__league">
+        <span>Canada</span>
+      </li>
+    </ul>
+  </div>
+</div>

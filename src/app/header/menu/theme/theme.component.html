@@ -1,0 +1,16 @@
+<div class="theme" (click)="themeClicked()">
+  <i
+    class="fas fa-sun fa-lg"
+    [ngStyle]="{ color: !darkTheme ? 'yellow' : '#8f6c0b' }"
+  ></i>
+  <span
+    class="theme__background"
+    [ngClass]="{
+      'theme__background--active': darkTheme
+    }"
+  ></span>
+  <i
+    class="fas fa-moon fa-lg"
+    [ngStyle]="{ color: darkTheme ? '#089aad' : '#8f6c0b' }"
+  ></i>
+</div>

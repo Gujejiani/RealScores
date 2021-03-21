@@ -15,6 +15,9 @@ import { LanguageComponent } from './header/menu/language-dropdown/languages.com
 import { NavComponent } from './header/nav/nav.component';
 import { MainComponent } from './main/main.component';
 import { NavDropdownComponent } from './header/nav/nav-dropdown/nav-dropdown.component';
+import { BurgerMenuComponent } from './UI/burger-menu/burger-menu.component';
+import { MobMenuComponent } from './header/mob-menu/mob-menu.component';
+import { ThemeComponent } from './header/menu/theme/theme.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,9 @@ import { NavDropdownComponent } from './header/nav/nav-dropdown/nav-dropdown.com
     NavComponent,
     MainComponent,
     NavDropdownComponent,
+    BurgerMenuComponent,
+    MobMenuComponent,
+    ThemeComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],

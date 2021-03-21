@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { RegistrationService } from 'registration.service';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form-template',
@@ -10,11 +9,12 @@ export class FormTemplateComponent implements OnInit {
   @Input() showLogin: boolean = false;
   @Input() type: string;
   @Input() oppositeType: string;
+  @Output() hideModal = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit(): void {}
 
   hideLoginOverlay() {
-    this.showLogin = false;
+    this.hideModal.emit();
   }
 }

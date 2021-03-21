@@ -11,6 +11,11 @@ a {
   text-decoration: none;
 }
 
+.mob-hide {
+  @media (max-width: 745px) {
+    display: none;
+  }
+}
 @mixin flexPos {
   justify-content: center;
   align-items: center;

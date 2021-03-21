@@ -9,11 +9,19 @@
   }
   &__logo {
     max-width: 200px;
+    @media (max-width: 925px) {
+      max-width: 100px;
+      margin-left: 10px;
+    }
   }
   &__section {
     display: flex;
     width: 100%;
     max-width: 600px;
+    @media (max-width: 745px) {
+      max-width: 120px;
+    }
+
     justify-content: space-between;
     height: 100%;
     display: flex;
@@ -21,46 +29,21 @@
     .fas {
       cursor: pointer;
     }
+    &__settings {
+      @media (max-width: 745px) {
+        display: none;
+      }
+    }
     &__login {
       cursor: pointer;
+      @media (max-width: 745px) {
+        display: none;
+      }
     }
     &__registration {
       cursor: pointer;
-    }
-    &__theme {
-      background-color: gray;
-      border-radius: 10px;
-      position: relative;
-
-      cursor: pointer;
-      .fas {
-        transition: color 0.3s ease-in-out;
-      }
-      &--active {
-        border-radius: 10px;
-      }
-      &__background {
-        position: absolute;
-        display: flex;
-        top: 0;
-        background-color: #000;
-        width: 10px;
-        height: 100%;
-        width: 32px;
-        border-radius: 10px;
-        transition: all 0.4s ease-in-out;
-        &--active {
-          transform: translateX(32px);
-          .fas {
-            background-color: red;
-          }
-        }
-      }
-      .fas {
-        position: relative;
-        padding: 5px;
-        z-index: 10;
-        color: rgb(224, 166, 5);
+      @media (max-width: 745px) {
+        display: none;
       }
     }
   }

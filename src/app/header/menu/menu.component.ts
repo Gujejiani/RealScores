@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -10,10 +10,13 @@ export class MenuComponent implements OnInit {
   showFormModal: boolean = false;
   type: string;
   oppositeType: string;
+  darkTheme: boolean = false;
+  showMobileMenu: boolean = false;
   constructor() {}
 
-  darkTheme: boolean = false;
-
+  menuClicked() {
+    this.showMobileMenu = !this.showMobileMenu;
+  }
   themeChanged() {
     this.darkTheme = !this.darkTheme;
   }
@@ -26,9 +29,14 @@ export class MenuComponent implements OnInit {
     this.oppositeType = 'Sign Up';
     this.showFormModal = !this.showFormModal;
   }
+  hideRegistrationModal() {
+    console.log('sd');
+    this.showFormModal = false;
+  }
   registrationClicked() {
     this.type = 'Sign Up';
     this.oppositeType = 'Log In';
+    console.log(this.showFormModal);
     this.showFormModal = !this.showFormModal;
   }
   ngOnInit(): void {}
