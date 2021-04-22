@@ -1,0 +1,14 @@
+<div class="user-wrapper" *ngIf="user">
+  <div (click)="toggleDropDown()" class="user dropdown">
+    <i class="fas fa-user-check user__icon"></i>
+    <span class="user__username">{{ "user?.username " }}</span>
+    <i class="fas fa-caret-down dropdown-arrow" rotate></i>
+  </div>
+  <ul
+    [ngClass]="{ 'user__dropdown--toggle': showDropDown }"
+    class="user__dropdown"
+  >
+    <i class="fas fa-sign-out-alt"></i>
+    <li (click)="onLogout()" class="user__dropdown__logout">Log Out</li>
+  </ul>
+</div>

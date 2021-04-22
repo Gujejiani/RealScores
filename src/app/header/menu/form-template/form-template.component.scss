@@ -29,6 +29,13 @@
   &__title {
     color: #000;
   }
+  &__error-message {
+    color: red;
+    visibility: hidden;
+    &--show {
+      visibility: visible;
+    }
+  }
   &__social {
     display: flex;
     flex-direction: column;
@@ -39,14 +46,13 @@
       background-color: #3b5998;
       padding: 10px;
       text-align: center;
-
-      margin-bottom: 20px;
+      margin-bottom: 3px;
     }
     &__google {
       display: flex;
 
       align-items: center;
-      background-color: #2e7688;
+      background-color: #30a9c7;
       padding: 10px;
       text-align: center;
       color: #fff;
@@ -79,6 +85,10 @@
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+    &--disabled {
+      background-color: rgb(172, 165, 165);
+      cursor: none;
+    }
   }
   &__alternative {
     display: flex;

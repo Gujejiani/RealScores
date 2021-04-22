@@ -57,13 +57,10 @@
     </a>
     <a
       (click)="toggleNavDRopDown()"
-      class="nav__list__item nav__list__item__dropdown"
+      class="nav__list__item nav__list__item__dropdown dropdown"
       [ngClass]="{ 'nav__list__item__dropdown--show': showNavDropdown }"
     >
-      <i
-        class="fas fa-caret-down"
-        [ngClass]="{ 'fa-caret-down--rotate': showNavDropdown }"
-      ></i>
+      <i class="fas fa-caret-down" rotate></i>
       <li class="nav__list__item__link">More Sports</li>
     </a>
     <app-nav-dropdown [showDropdown]="showNavDropdown"></app-nav-dropdown>

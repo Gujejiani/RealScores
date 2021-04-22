@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService, User } from './form-template/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,13 @@ export class MenuComponent implements OnInit {
   oppositeType: string;
   darkTheme: boolean = false;
   showMobileMenu: boolean = false;
-  constructor() {}
+  user = null;
+  constructor(private authService: AuthService) {}
+  ngOnInit(): void {
+    this.authService.loggedUser.subscribe((user: User) => {
+      this.user = user;
+    });
+  }
 
   menuClicked() {
     this.showMobileMenu = !this.showMobileMenu;
@@ -39,5 +46,4 @@ export class MenuComponent implements OnInit {
     console.log(this.showFormModal);
     this.showFormModal = !this.showFormModal;
   }
-  ngOnInit(): void {}
 }

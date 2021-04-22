@@ -9,13 +9,10 @@
         <i class="fas fa-cog fa-sm"></i>
         <label class="menu__set__item__title">Settings</label>
       </li>
-      <li (click)="toggleLanguages()" class="menu__set__item">
+      <li (click)="toggleLanguages()" class="menu__set__item dropdown">
         <img width="20px" [src]="language.src" class="fas fa-cog fa-lg" />
         <label class="menu__set__item__title">{{ language.country }}</label>
-        <i
-          class="fas fa-caret-down"
-          [ngClass]="{ 'fa-caret-down--rotate': toggleLanguages }"
-        ></i>
+        <i class="fas fa-caret-down dropdown-arrow" rotate></i>
       </li>
       <ul
         [ngClass]="{ 'menu__set__item__languages--toggle': showLanguages }"

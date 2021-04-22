@@ -11,15 +11,19 @@
       ></app-theme>
     </div>
     <app-search></app-search>
+
     <div class="menu__section__settings">
       <i (click)="onSettingsClick()" class="fas fa-cog fa-lg"></i>
       <app-settings [showSettingsOverlay]="showSettingOverlay"></app-settings>
     </div>
-    <span (click)="loginClicked()" class="menu__section__login">LOGIN</span>
+    <div class="authentication" *ngIf="!user">
+      <app-user></app-user>
+      <span (click)="loginClicked()" class="menu__section__login">LOGIN</span>
 
-    <span class="menu__section__registration" (click)="registrationClicked()"
-      >REGISTRATION</span
-    >
+      <span class="menu__section__registration" (click)="registrationClicked()"
+        >REGISTRATION</span
+      >
+    </div>
     <app-burger-menu (onMenuClick)="menuClicked()"> </app-burger-menu>
     <app-mob-menu [showMobMenu]="showMobileMenu"></app-mob-menu>
     <app-form-template

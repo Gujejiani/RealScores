@@ -1,6 +1,6 @@
 <div
   (click)="toggleDropDown($event)"
-  class="language"
+  class="language dropdown"
   [ngStyle]="{
     backgroundColor: showDropDown ? '#113A44' : ''
   }"
@@ -9,10 +9,7 @@
   <label class="language__title language__title--main">{{
     language.country
   }}</label>
-  <i
-    class="fas fa-caret-down"
-    [ngClass]="{ 'fa-caret-down--rotate': showDropDown }"
-  ></i>
+  <i class="fas fa-caret-down" rotate></i>
   <ul
     class="language__dropdown"
     [ngClass]="{

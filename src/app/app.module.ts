@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,9 @@ import { NavDropdownComponent } from './header/nav/nav-dropdown/nav-dropdown.com
 import { BurgerMenuComponent } from './UI/burger-menu/burger-menu.component';
 import { MobMenuComponent } from './header/mob-menu/mob-menu.component';
 import { ThemeComponent } from './header/menu/theme/theme.component';
+import { RotateDirective } from './shared/rotate.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './header/menu/form-template/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +37,16 @@ import { ThemeComponent } from './header/menu/theme/theme.component';
     BurgerMenuComponent,
     MobMenuComponent,
     ThemeComponent,
+    RotateDirective,
+    UserComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
