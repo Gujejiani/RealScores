@@ -16,17 +16,29 @@
       <i (click)="onSettingsClick()" class="fas fa-cog fa-lg"></i>
       <app-settings [showSettingsOverlay]="showSettingOverlay"></app-settings>
     </div>
-    <div class="authentication" *ngIf="!user">
-      <app-user></app-user>
-      <span (click)="loginClicked()" class="menu__section__login">LOGIN</span>
+    <app-user [user]="user"></app-user>
+    <div class="authentication">
+      <div class="mob-hide" *ngIf="!user">
+        <span (click)="loginClicked()" class="menu__section__login">LOGIN</span>
 
-      <span class="menu__section__registration" (click)="registrationClicked()"
-        >REGISTRATION</span
-      >
+        <span
+          class="menu__section__registration"
+          (click)="registrationClicked()"
+          >REGISTRATION</span
+        >
+      </div>
+      <i
+        *ngIf="user; else authFalse"
+        class="fas fa-user-check user__icon desktop-hide fa-lg"
+      ></i>
+      <ng-template #authFalse>
+        <i class="fas fa-user-alt login user__icon desktop-hide fa-lg"></i>
+      </ng-template>
     </div>
     <app-burger-menu (onMenuClick)="menuClicked()"> </app-burger-menu>
     <app-mob-menu [showMobMenu]="showMobileMenu"></app-mob-menu>
     <app-form-template
+      (changeLoginMethod)="changeAuthenticationMethod($event)"
       [type]="type"
       [oppositeType]="oppositeType"
       [showLogin]="showFormModal"

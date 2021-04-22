@@ -8,22 +8,16 @@ import { AuthService, User } from '../auth.service';
 })
 export class UserComponent implements OnInit {
   showDropDown: boolean = false;
-  user = null;
+  @Input() user: User | boolean = false;
   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-    this.authService.loggedUser.subscribe((user) => {
-      this.user = true;
-      console.log(this.user);
-    });
-    this.user = false;
-    console.log(this.user);
-    console.log('subscribed');
-  }
-  toggleDropDown() {
+  ngOnInit(): void {}
+  toggleDropdown() {
+    console.log('why dis have to work');
     this.showDropDown = !this.showDropDown;
   }
   onLogout() {
-    console.log('log out');
+    this.showDropDown = false;
+    this.authService.LogOut();
   }
 }

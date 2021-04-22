@@ -6,6 +6,7 @@ export interface User {
   username: string;
   email: string;
   password: string;
+  token?: boolean | string;
 }
 
 interface Response {
@@ -66,5 +67,34 @@ export class AuthService {
     }
 
     return throwError(errorMessage);
+  }
+
+  LogOut() {
+    this.loggedUser.value.token = false;
+    this.saveUserToLocalStorage(this.loggedUser.value);
+    this.loggedUser.next(null);
+  }
+
+  saveUserToLocalStorage(user: User) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  AutoLogin() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user || !user.token) {
+      return false;
+    }
+    this.loggedUser.next(user);
+  }
+  getUserName(email) {
+    const user: User = JSON.parse(localStorage.getItem('user'));
+    console.log(user.email === email);
+    console.log(user.username);
+    console.log(user);
+    if (user.email === email) {
+      return user.username;
+    }
+
+    return 'USER';
   }
 }

@@ -12,6 +12,7 @@
     >
     <div class="login__inputs">
       <input
+        *ngIf="type !== 'Login'"
         type="text"
         formControlName="username"
         placeholder="Username"

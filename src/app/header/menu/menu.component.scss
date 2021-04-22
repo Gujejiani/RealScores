@@ -57,3 +57,16 @@
     }
   }
 }
+.mob-hide {
+  @media (max-width: 745px) {
+    display: none;
+  }
+}
+.user__icon {
+  margin-right: 10px;
+}
+.desktop-hide {
+  @media (min-width: 745px) {
+    display: none;
+  }
+}

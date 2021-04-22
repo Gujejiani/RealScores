@@ -40,3 +40,13 @@
     }
   }
 }
+.mob-hide {
+  @media (max-width: 745px) {
+    display: none;
+  }
+}
+.mob-show {
+  @media (min-width: 745px) {
+    display: none;
+  }
+}
