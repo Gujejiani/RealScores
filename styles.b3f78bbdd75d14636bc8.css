@@ -1,0 +1,1 @@
+:root{--darker-color:#2f2f2f;--light-color:#d6e0d5;--sun-color:#8f6c0b;--moon-color:#089aad}*{box-sizing:border-box;margin:0;padding:0}ul{list-style:none}a{text-decoration:none}@media (max-width:745px){.mob-hide{display:none}}.rotate{transform:rotate(180deg)}.dropdown-arrow{transition:transform .5s ease-in-out;margin-left:5px}
