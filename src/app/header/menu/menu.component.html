@@ -14,7 +14,10 @@
 
     <div class="menu__section__settings">
       <i (click)="onSettingsClick()" class="fas fa-cog fa-lg"></i>
-      <app-settings [showSettingsOverlay]="showSettingOverlay"></app-settings>
+      <app-settings
+        (hideModal)="showSettingOverlay = false"
+        [showSettingsOverlay]="showSettingOverlay"
+      ></app-settings>
     </div>
     <app-user [user]="user"></app-user>
     <div class="authentication">
@@ -29,10 +32,15 @@
       </div>
       <i
         *ngIf="user; else authFalse"
+        (click)="showMobUSerInfo()"
         class="fas fa-user-check user__icon desktop-hide fa-lg"
+        [ngClass]="{ 'user__icon--logoutMode': showMobileLogOut }"
       ></i>
       <ng-template #authFalse>
-        <i class="fas fa-user-alt login user__icon desktop-hide fa-lg"></i>
+        <i
+          (click)="onNotAuthIconClicked()"
+          class="fas fa-user-alt login user__icon desktop-hide fa-lg"
+        ></i>
       </ng-template>
     </div>
     <app-burger-menu (onMenuClick)="menuClicked()"> </app-burger-menu>
@@ -46,3 +54,7 @@
     ></app-form-template>
   </div>
 </div>
+<app-mob-authorised
+  [user]="user"
+  [showLogout]="showMobileLogOut"
+></app-mob-authorised>

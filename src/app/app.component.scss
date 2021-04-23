@@ -1,1 +1,9 @@
-
+.spinner {
+  display: flex;
+  position: absolute;
+  top: 200px;
+  margin: auto;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -34,3 +34,13 @@ $moon-color: #089aad;
   transition: transform 0.5s ease-in-out;
   margin-left: 5px;
 }
+.desktop-hide {
+  @media (min-width: 745px) {
+    display: none;
+  }
+}
+.mob-hide {
+  @media (max-width: 745px) {
+    display: none;
+  }
+}

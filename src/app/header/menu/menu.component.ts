@@ -16,10 +16,13 @@ export class MenuComponent implements OnInit, OnDestroy {
   showMobileMenu: boolean = false;
   user = null;
   subscription: Subscription;
+  showMobileLogOut: boolean = false;
+
   constructor(private authService: AuthService) {}
   ngOnInit(): void {
     this.subscription = this.authService.loggedUser.subscribe((user: User) => {
       this.user = user;
+      this.showMobileLogOut = false;
     });
     this.authService.AutoLogin();
   }
@@ -51,6 +54,13 @@ export class MenuComponent implements OnInit, OnDestroy {
     console.log(this.showFormModal);
     this.showFormModal = !this.showFormModal;
   }
+  showMobUSerInfo() {
+    this.showMobileLogOut = !this.showMobileLogOut;
+  }
+  onNotAuthIconClicked() {
+    this.loginClicked();
+  }
+
   changeAuthenticationMethod(type: string) {
     console.log(type);
     if (type === 'Sign Up') {

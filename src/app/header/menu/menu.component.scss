@@ -4,6 +4,11 @@
   justify-content: space-between;
   max-width: 1000px;
   margin: auto;
+  padding: 15px 0;
+  position: relative;
+  background-color: #1b5c6d;
+
+  z-index: 21;
   .fas {
     opacity: 0.9;
   }
@@ -57,16 +62,23 @@
     }
   }
 }
-.mob-hide {
-  @media (max-width: 745px) {
-    display: none;
-  }
-}
+
 .user__icon {
   margin-right: 10px;
-}
-.desktop-hide {
-  @media (min-width: 745px) {
-    display: none;
+  position: relative;
+  z-index: 10;
+  &--logoutMode {
+    &::after {
+      content: "";
+      display: flex;
+      position: absolute;
+      top: -20px;
+      left: -8px;
+      width: 40px;
+      height: 57px;
+      background-color: rgb(23, 21, 21);
+      z-index: 5;
+      opacity: 0.5;
+    }
   }
 }

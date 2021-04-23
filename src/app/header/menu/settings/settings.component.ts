@@ -13,6 +13,8 @@ export class SettingsComponent implements OnInit {
   ngOnInit(): void {}
   closeModal() {
     this.hideModal.emit();
-    this.showSettingsOverlay = !this.showSettingsOverlay;
+  }
+  onSave() {
+    this.hideModal.emit();
   }
 }

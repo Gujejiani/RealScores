@@ -1,0 +1,18 @@
+<div
+  class="auth-wrapper desktop-hide"
+  [ngClass]="{ 'auth-wrapper--toggle': showLogout }"
+>
+  <div class="auth">
+    <div class="auth__user">
+      <i class="fas fa-user-alt login user__icon desktop-hide fa-lg"></i>
+      <div class="auth__user__info">
+        <span class="auth__user__info__status">Logged In</span>
+        <span class="auth__user__info__username">{{ user.username }}</span>
+      </div>
+    </div>
+    <div (click)="onLogOut()" class="auth__logout">
+      <i class="fas fa-sign-out-alt auth__logout__icon fa-lg"></i>
+      <span class="auth__logout__text">Log Out</span>
+    </div>
+  </div>
+</div>

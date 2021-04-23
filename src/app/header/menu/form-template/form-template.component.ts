@@ -108,6 +108,7 @@ export class FormTemplateComponent implements OnInit, OnDestroy {
   }
   changeAuthenticationMethod() {
     let type: string = '';
+    this.errorMessage = '';
     switch (this.type) {
       case 'Sign Up':
         type = 'Login';

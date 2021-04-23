@@ -21,6 +21,8 @@ import { ThemeComponent } from './header/menu/theme/theme.component';
 import { RotateDirective } from './shared/rotate.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './header/menu/form-template/user/user.component';
+import { MobAuthorisedComponent } from './header/menu/mob-authorised/mob-authorised.component';
+import { SpinnerComponent } from './UI/spinner/spinner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,8 @@ import { UserComponent } from './header/menu/form-template/user/user.component';
     ThemeComponent,
     RotateDirective,
     UserComponent,
+    MobAuthorisedComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
