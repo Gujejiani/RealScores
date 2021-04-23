@@ -50,6 +50,14 @@
     &__link {
       margin-left: 5px;
       font-size: 12px;
+      @media (max-width: 380px) {
+        display: flex;
+        font-size: 8px;
+      }
+      @media (max-width: 330px) {
+        display: flex;
+        font-size: 5px;
+      }
     }
     &__quantity {
       margin-left: 5px;

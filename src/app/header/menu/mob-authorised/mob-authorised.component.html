@@ -7,7 +7,7 @@
       <i class="fas fa-user-alt login user__icon desktop-hide fa-lg"></i>
       <div class="auth__user__info">
         <span class="auth__user__info__status">Logged In</span>
-        <span class="auth__user__info__username">{{ user.username }}</span>
+        <span class="auth__user__info__username">{{ user?.username }}</span>
       </div>
     </div>
     <div (click)="onLogOut()" class="auth__logout">
